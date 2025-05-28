@@ -15,7 +15,7 @@ public class UsuarioServicios {
     @Autowired
     IUsuarioRepositorio repository;
 
-    public Usuario saveUsuario(Usuario UsuarioData) throws Exception {
+    public Usuario guardarUsuario(Usuario UsuarioData) throws Exception {
         try {
             return this.repository.save(UsuarioData);
         } catch (Exception error) {
@@ -23,7 +23,7 @@ public class UsuarioServicios {
         }
     }
 
-    public Usuario modifyUsuario(Integer id, Usuario UsuarioDatos) throws Exception {
+    public Usuario modificarUsuario(Integer id, Usuario UsuarioDatos) throws Exception {
         try {
             Optional<Usuario> searchedUsuario = this.repository.findById(id);
             if (searchedUsuario.isPresent()) {
@@ -41,7 +41,7 @@ public class UsuarioServicios {
         }
     }
 
-    public Usuario searchUsuarioById(Integer id) throws Exception {
+    public Usuario buscarUsuarioPorId(Integer id) throws Exception {
         try {
             Optional<Usuario> searchedUsuario = this.repository.findById(id);
             if (searchedUsuario.isPresent()) {
@@ -54,7 +54,7 @@ public class UsuarioServicios {
         }
     }
 
-    public List<Usuario> searchAllUsuarios() throws Exception {
+    public List<Usuario> buscarTodosLosUsuarios() throws Exception {
         try {
             return this.repository.findAll();
         } catch (Exception error) {
@@ -62,7 +62,7 @@ public class UsuarioServicios {
         }
     }
 
-    public boolean deleteUsuario(Integer id) throws Exception {
+    public boolean eliminarUsuario(Integer id) throws Exception {
         try {
             Optional<Usuario> searchedUsuario = this.repository.findById(id);
             if (searchedUsuario.isPresent()) {

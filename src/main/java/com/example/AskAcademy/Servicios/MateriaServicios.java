@@ -59,7 +59,7 @@ public class MateriaServicios {
         }
     }
 
-    public boolean deleteSubject(Integer id) throws Exception {
+    public boolean eliminarMateria(Integer id) throws Exception {
         try {
             Optional<Materia> searched = this.repositorio.findById(id);
             if (searched.isPresent()) {

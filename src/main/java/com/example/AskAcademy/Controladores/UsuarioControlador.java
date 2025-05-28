@@ -1,61 +1,64 @@
 package com.example.AskAcademy.Controladores;
 
-import com.example.AskAcademy.Modelos.Curso;
-import com.example.AskAcademy.Servicios.CursoServicios;
+import com.example.AskAcademy.Modelos.Usuario;
+import com.example.AskAcademy.Servicios.UsuarioServicios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/cursos")
-public class CursoControlador {
+@RequestMapping("/usuarios")
+public class UsuarioControlador {
 
     @Autowired
-    CursoServicios servicio;
+    UsuarioServicios servicio;
 
     @PostMapping()
-    public ResponseEntity<?> guardarCurso(@RequestBody Curso cursoDatos) {
+    public ResponseEntity<?> guardarUsuario(@RequestBody Usuario usuarioDatos) {
         try {
             return ResponseEntity
                     .status(HttpStatus.CREATED)
-                    .body(this.servicio.guardarCurso(cursoDatos));
+                    .body(this.servicio.guardarUsuario(usuarioDatos));
         } catch (Exception errorAPI) {
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .body(errorAPI.getMessage());
         }
     }
+
     @PutMapping("/{id}")
-    public ResponseEntity<?> modificarCurso(@PathVariable Integer id, @RequestBody Curso cursoDatos) {
+    public ResponseEntity<?> modificarUsuario(@PathVariable Integer id, @RequestBody Usuario usuarioDatos) {
         try {
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .body(this.servicio.modificarCurso(id, cursoDatos));
+                    .body(this.servicio.modificarUsuario(id, usuarioDatos));
         } catch (Exception errorAPI) {
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .body(errorAPI.getMessage());
         }
     }
+
     @GetMapping("/{id}")
-    public ResponseEntity<?> buscarCursoPorId(@PathVariable Integer id) {
+    public ResponseEntity<?> buscarUsuarioPorId(@PathVariable Integer id) {
         try {
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .body(this.servicio.buscarCursoPorId(id));
+                    .body(this.servicio.buscarUsuarioPorId(id));
         } catch (Exception errorAPI) {
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .body(errorAPI.getMessage());
         }
     }
+
     @GetMapping()
-    public ResponseEntity<?> buscarTodosLosCursos() {
+    public ResponseEntity<?> buscarTodosLosUsuarios() {
         try {
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .body(this.servicio.buscarTodosLosCursos());
+                    .body(this.servicio.buscarTodosLosUsuarios());
         } catch (Exception errorAPI) {
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
@@ -64,17 +67,16 @@ public class CursoControlador {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminarCurso(@PathVariable Integer id) {
+    public ResponseEntity<?> eliminarUsuario(@PathVariable Integer id) {
         try {
-            this.servicio.eliminarCurso(id);
+            this.servicio.eliminarUsuario(id);
             return ResponseEntity
-                    .status(HttpStatus.NO_CONTENT)
-                    .build();
+                    .status(HttpStatus.OK)
+                    .body("Usuario eliminado correctamente");
         } catch (Exception errorAPI) {
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .body(errorAPI.getMessage());
         }
     }
-
 }
