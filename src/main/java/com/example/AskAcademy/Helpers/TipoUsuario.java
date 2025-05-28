@@ -6,12 +6,12 @@ public enum TipoUsuario {
     ESTUDIANTE("Estudiante");
 
     private String descripcion;
-
+    
     TipoUsuario(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    public String getDescripcion() {
+    public String getdescripcion() {
         return descripcion;
     }
 }
