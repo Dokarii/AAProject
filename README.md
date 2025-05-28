@@ -19,19 +19,20 @@ Todo el sistema está optimizado para que la navegación fluya, así como su alm
 - ✅ Interfaz de gráfica responsiva basada en una paleta de colores de azul y blanco.
 - ✅ Enrutamiento dinámico con React Router (RouterProvider) para una navegación eficiente
 
-## 📂 Estructura del Proyect
+## 📂 Estructura del Proyecto
 ```
-📂 src  
- ┣ 📂 components  # Componentes reutilizables  
- ┣ 📂 pages       # Páginas principales de la aplicación  
- ┣ 📂 styles      # Archivos de estilos CSS  
- ┣ 📜 App.js      # Componente raíz  
- ┣ 📜 index.js    # Componente de entrada  
- ┣ 📂 api         # APIs con localStorage
+📂 src
+    ┣ 📂 main
+      ┣ 📂 java
+        ┣ 📂 com.example.AskAcademy
+            ┣ 📂 Controladores
+            ┣ 📂 Helpers
+            ┣ 📂 Modelos
+            ┣ 📂 Repositorios
+            ┣ 📂 Servicios
+              ▶ AskAcademyApplication
 ```
 
 # 🛠️ Herramientas usadas
-- **React.js** → Base fundamental para la creación de la aplicación.
-- **React Router**→ Tratamiento de rutas y navegación fluidad entre secciones.
-- **LocalStorage** → Consolidación de usuarios y formularios sin necesidad de base de datos externa.
-- **CSS** → Diseño limpio  y adaptable para una mejor experiencia.
+- **Java** → Base fundamental para la creación de la aplicación.
+- **Spring Boot**→ Tratamiento de rutas y navegación fluidad entre secciones.
