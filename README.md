@@ -19,7 +19,7 @@ Todo el sistema está optimizado para que la navegación fluya, así como su alm
 - ✅ Interfaz de gráfica responsiva basada en una paleta de colores de azul y blanco.
 - ✅ Enrutamiento dinámico con React Router (RouterProvider) para una navegación eficiente
 
-## 📂 Estructura del Proyecto
+## 📂 Estructura del Proyecto 
 ```
 📂 src
     ┣ 📂 main
