@@ -1,6 +1,7 @@
 package com.example.AskAcademy.Modelos;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -18,6 +19,10 @@ public class Profesor {
     @OneToMany(mappedBy = "profesor")
     @JsonBackReference
     private List<Curso> cursos;
+
+    @OneToMany(mappedBy = "profesor", cascade = CascadeType.ALL)
+    @JsonManagedReference(value = "profesor-formularios")
+    private List<Formulario> formularios;
 
     @OneToOne
     @JoinColumn(name = "fk_usuario", referencedColumnName = "id_usuario")
@@ -44,5 +49,12 @@ public class Profesor {
     }
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
+    }
+
+    public List<Formulario> getFormularios() {
+        return formularios;
+    }
+    public void setFormularios(List<Formulario> formularios) {
+        this.formularios = formularios;
     }
 }

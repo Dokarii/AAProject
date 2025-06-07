@@ -1,6 +1,7 @@
 package com.example.AskAcademy.Modelos;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.*;
+import java.util.List;
 import jakarta.persistence.*;
 
 @Entity
@@ -25,6 +26,10 @@ public class Estudiante {
 
     @Column(name = "direccion", nullable = false, length = 255)
     private String direccion;
+
+    @OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL)
+    @JsonManagedReference(value = "estudiante-respuestas")
+    private List<RespuestaFormulario> respuestasFormularios;
 
     public Estudiante() {
     }
@@ -70,5 +75,12 @@ public class Estudiante {
     }
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public List<RespuestaFormulario> getRespuestasFormularios() {
+        return respuestasFormularios;
+    }
+    public void setRespuestasFormularios(List<RespuestaFormulario> respuestasFormularios) {
+        this.respuestasFormularios = respuestasFormularios;
     }
 }

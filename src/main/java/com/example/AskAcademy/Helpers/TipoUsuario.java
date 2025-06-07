@@ -1,7 +1,6 @@
 package com.example.AskAcademy.Helpers;
 
 public enum TipoUsuario {
-    ADMINISTRADOR("Administrador"),
     DOCENTE("Docente"),
     ESTUDIANTE("Estudiante");
 
