@@ -35,6 +35,7 @@ public class Nota {
         this.fechaEvaluacion = fechaEvaluacion;
     }
 
+    // Getters y Setters
     public Integer getId() {
         return id;
     }

@@ -21,16 +21,18 @@ Todo el sistema está optimizado para que la navegación fluya, así como su alm
 
 ## 📂 Estructura del Proyecto 
 ```
-📂 src
-    ┣ 📂 main
-      ┣ 📂 java
-        ┣ 📂 com.example.AskAcademy
-            ┣ 📂 Controladores
-            ┣ 📂 Helpers
-            ┣ 📂 Modelos
-            ┣ 📂 Repositorios
-            ┣ 📂 Servicios
-              ▶ AskAcademyApplication
+src/
+├── main/
+│   ├── java/
+│   │   └── com/ejemplo/plataforma/
+│   │       ├── controladores/  # Lógica de endpoints (API)
+│   │       ├── helpers/        # Utilidades y funciones auxiliares
+│   │       ├── modelos/        # Entidades (Profesor, Estudiante, Formulario, etc.)
+│   │       ├── repositorios/   # Interfaces JPA (Spring Data)
+│   │       ├── servicios/      # Lógica de negocio
+│   │       └── PlataformaApplication.java
+│   └── resources/
+│       ├── application.properties  # Configuración BD
 ```
 
 # 🛠️ Herramientas usadas

@@ -42,6 +42,7 @@ public class Estudiante {
         this.direccion = direccion;
     }
 
+    // Getters y Setters
     public Integer getId() {
         return id;
     }

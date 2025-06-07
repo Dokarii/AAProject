@@ -32,6 +32,7 @@ public class Materia {
         this.curso = curso;
     }
 
+    // Getters y Setters
     public Integer getId() {
         return id;
     }

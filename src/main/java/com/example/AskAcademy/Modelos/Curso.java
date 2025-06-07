@@ -26,6 +26,7 @@ public class Curso {
         this.nombre = nombre;
     }
 
+    // Getters y Setters
     public Integer getId() {
         return id;
     }

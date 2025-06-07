@@ -13,6 +13,7 @@ public class Usuario {
     @Column(name = "id_usuario")
     private Integer id;
 
+//  @NotBlank(message = "El nombre es obligatorio")
     @Column(nullable = false, length = 100)
     private String nombre;
 
@@ -44,6 +45,7 @@ public class Usuario {
         this.tipoUsuario = tipoUsuario;
     }
 
+    // Getters y Setters
     public Integer getId() {
         return id;
     }

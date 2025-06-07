@@ -37,6 +37,7 @@ public class Profesor {
         this.especialidad = especialidad;
     }
 
+    // Getters y Setters
     public Integer getId() {
         return id;
     }
