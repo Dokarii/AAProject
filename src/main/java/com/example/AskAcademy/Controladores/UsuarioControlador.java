@@ -1,5 +1,6 @@
 package com.example.AskAcademy.Controladores;
 
+import com.example.AskAcademy.Dtos.UsuarioResponseDTO;
 import com.example.AskAcademy.Modelos.Usuario;
 import com.example.AskAcademy.Servicios.UsuarioServicios;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,18 +16,20 @@ public class UsuarioControlador {
     @Autowired
     UsuarioServicios servicio;
 
-    @PostMapping()
-    public ResponseEntity<?> guardarUsuario(@RequestBody Usuario usuarioDatos, BindingResult result) {
+    @PostMapping
+    public ResponseEntity<?> guardarUsuario(@RequestBody Usuario usuarioDatos) {
         try {
+            Usuario nuevo = this.servicio.guardarUsuario(usuarioDatos);
             return ResponseEntity
                     .status(HttpStatus.CREATED)
-                    .body(this.servicio.guardarUsuario(usuarioDatos));
+                    .body(new UsuarioResponseDTO(nuevo));
         } catch (Exception errorAPI) {
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .body(errorAPI.getMessage());
         }
     }
+
 
     @PutMapping("/{id}")
     public ResponseEntity<?> modificarUsuario(@PathVariable Integer id, @RequestBody Usuario usuarioDatos) {
